@@ -1,5 +1,13 @@
 {
   "HOW_TO_BE_A_HERO": {
+    ...existing code...
+  },
+  "HTBAH.Item.Firemode": "Feuermodus",
+  "HTBAH.AutofireDialog.Title": "Feuerstoß",
+  "HTBAH.AutofireDialog.Bullets": "Anzahl der Kugeln",
+  "HTBAH.AutofireDialog.Hint": "Wähle, wie viele Kugeln abgefeuert werden (max: {maxBullets}).",
+  "HTBAH.AutofireDialog.Fire": "Feuern!"
+  "HOW_TO_BE_A_HERO": {
     "Attributes": {
       "Armor": "Rüstung",
       "HitPointsCurrent": "Aktuelle Lebenspunkte",

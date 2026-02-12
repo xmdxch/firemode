@@ -7,6 +7,14 @@ export default class HowToBeAHeroWeapon extends HowToBeAHeroPhysical {
     const schema = super.defineSchema();
     
     schema.weaponType = new fields.StringField({ blank: true, label: "HOW_TO_BE_A_HERO.Item.WeaponType"});
+    // Add firemode property: "semi" or "auto"
+    schema.firemode = new fields.StringField({
+      required: false,
+      blank: true,
+      initial: "semi",
+      choices: ["semi", "auto"],
+      label: "HOW_TO_BE_A_HERO.Item.Firemode"
+    });
     schema.equipped = new fields.BooleanField({required: true, label: "HOW_TO_BE_A_HERO.Equipped"});
     
     schema.roll = new fields.SchemaField({

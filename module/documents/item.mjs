@@ -1,5 +1,6 @@
 import { d100Roll } from "../dice/dice.mjs";
 import { HowToBeAHeroRollDialog } from "../apps/roll-dialog.mjs";
+import { AutofireDialog } from "../apps/autofire-dialog.mjs";
 /**
  * Extend the basic Item with some very simple modifications.
  * @extends {Item}
@@ -158,25 +159,37 @@ async roll(options = {}) {
     console.log(`HowToBeAHero | Updated legacy item ${item.name} with rollable: ${defaultRollable}`);
   }
 
-  // Get the base formula from the item (generate if missing)
+
+  // Autofire dialog for auto weapons
   let baseFormula = this.system.formula;
-  
-  // If formula is empty, generate it from roll data
-  if (!baseFormula && this.system.roll) {
-    const diceNum = this.system.roll.diceNum || 1;
-    const diceSize = this.system.roll.diceSize || "d10";
-    baseFormula = `${diceNum}${diceSize}`;
-    
-    // Update the item with the generated formula
-    await this.update({"system.formula": baseFormula});
-    console.log(`HowToBeAHero | Generated formula for ${item.name}: ${baseFormula}`);
+  let autofireBullets = 1;
+  if (this.type === 'weapon' && this.system.firemode === 'auto') {
+    // Default max bullets, could be improved to use magazine size
+    const maxBullets = this.system.quantity || 10;
+    autofireBullets = await AutofireDialog.show({ maxBullets });
+    if (!autofireBullets) return; // Cancelled
+    // Multiply diceNum by bullet count for autofire
+    if (this.system.roll && this.system.roll.diceNum) {
+      baseFormula = `${this.system.roll.diceNum * autofireBullets}${this.system.roll.diceSize}`;
+      if (this.system.roll.diceBonus) baseFormula += (this.system.roll.diceBonus > 0 ? `+${this.system.roll.diceBonus}` : this.system.roll.diceBonus);
+    } else {
+      baseFormula = `${autofireBullets}d10`;
+    }
+  } else {
+    // If formula is empty, generate it from roll data
+    if (!baseFormula && this.system.roll) {
+      const diceNum = this.system.roll.diceNum || 1;
+      const diceSize = this.system.roll.diceSize || "d10";
+      baseFormula = `${diceNum}${diceSize}`;
+      // Update the item with the generated formula
+      await this.update({"system.formula": baseFormula});
+      console.log(`HowToBeAHero | Generated formula for ${item.name}: ${baseFormula}`);
+    }
+    // If still no formula, fall back to default
+    if (!baseFormula) {
+      baseFormula = "1d100"; // Default for abilities
+    }
   }
-  
-  // If still no formula, fall back to default
-  if (!baseFormula) {
-    baseFormula = "1d100"; // Default for abilities
-  }
-  
   const rollType = this.system.rollType || "check";
 
   // Show the roll dialog to get bonus input from user

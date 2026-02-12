@@ -1,5 +1,13 @@
 {
   "HOW_TO_BE_A_HERO": {
+    ...existing code...
+  },
+  "HTBAH.Item.Firemode": "Firemode",
+  "HTBAH.AutofireDialog.Title": "Autofire",
+  "HTBAH.AutofireDialog.Bullets": "Number of Bullets",
+  "HTBAH.AutofireDialog.Hint": "Select how many bullets to fire (max: {maxBullets}).",
+  "HTBAH.AutofireDialog.Fire": "Fire!"
+  "HOW_TO_BE_A_HERO": {
     "Attributes": {
       "Armor": "Armor",
       "HitPointsCurrent": "Current Hit Points",
