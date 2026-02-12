@@ -1,0 +1,350 @@
+{
+  "HOW_TO_BE_A_HERO": {
+    "Attributes": {
+      "Armor": "Armor",
+      "HitPointsCurrent": "Current Hit Points",
+      "HitPointsMaximum": "Override Maximum Hit Points",
+      "HitPointsTemp": "Temporary Hit Points",
+      "HitPointsTempMax": "Temporary Maximum Hit Points",
+      "Eureka": "Eureka"
+    },
+    "Details": {
+      "Background": "Background",
+      "Alignment": "Alignment",
+      "Appearance": "Appearance",
+      "Wealth": "Wealth",
+      "Age": "Age"
+    },
+    "SkillSets": {
+      "Knowledge": { 
+        "label": "Knowledge", 
+        "long": "knowledge", 
+        "abbr": "kno", 
+        "bonus": "Knowledge-Bonus", 
+        "eureka": "Knowledge-Eureka", 
+        "total": "Knowledge-Total" 
+      },
+      "Action": { 
+        "label": "Action", 
+        "long": "action", 
+        "abbr": "act", 
+        "bonus": "Action-Bonus", 
+        "eureka": "Action-Eureka", 
+        "total": "Action-Total" 
+      },
+      "Social": { 
+        "label": "Social", 
+        "long": "social", 
+        "abbr": "soc", 
+        "bonus": "Social-Bonus", 
+        "eureka": "Social-Eureka", 
+        "total": "Social-Total" 
+      }
+    },
+    "Item":{
+      "Quantity": "Quantity",
+      "Description": "Description",
+      "Formula": "Formula"
+    },
+    "SheetLabels": {
+      "Actor": "HowToBeAHero Actor Sheet",
+      "Item": "HowToBeAHero Item Sheet"
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    }
+  },
+
+  "HTBAH.AbilityKnowledge": "Knowledge",
+  "HTBAH.AbilityAction": "Action",
+  "HTBAH.AbilitySocial": "Social",
+  "HTBAH.ItemRollPrompt": "{itemName} ({ability} Check)",
+  
+  "HTBAH.SkillSetCheck": "Roll for Skill Set",
+  "HTBAH.KnowledgeCheck": "Roll for Knowledge",
+  "HTBAH.ActionCheck": "Roll for Action",
+  "HTBAH.SocialCheck": "Roll for Social",
+  "HTBAH.Check": "Roll Check",
+  
+  "HTBAH.Appearance": "Appearance description",
+  "HTBAH.Age": "Age",
+  "HTBAH.Alignment": "Alignment",
+  "HTBAH.Wealth": "Wealth",
+
+  "HTBAH.SheetModeEdit": "Edit",
+  "HTBAH.SheetModePlay": "Play",
+
+  "HTBAH.DamageRollPrompt": "Rolled for",
+
+  "HTBAH.RollType": "Roll Type",
+  "HTBAH.RollTypeCheck": "Check",
+  "HTBAH.RollTypeDamage": "Damage",
+
+  "HTBAH.SkillDrop": "Drop Skill",
+  "HTBAH.WeaponDrop": "Drop Weapon",
+  "HTBAH.ItemDrop": "Drop to Convert to Item",
+  "HTBAH.ConsumableDrop": "Drop to Convert to Consumable",
+  "HTBAH.WeaponDropConvert": "Drop to Convert to Weapon", 
+  "HTBAH.ArmorDrop": "Drop to Convert to Armor",
+  "HTBAH.ToolDrop": "Drop to Convert to Tool",
+  "HTBAH.Skill": "Skill",
+  "HTBAH.Weapon": "Weapon",
+  "HTBAH.Parry": "Parry",
+  "HTBAH.Initiative": "Initiative",
+
+  "HTBAH.Names": "Names",
+
+  "HTBAH.HitPoints": "Hit Points",
+  "HTBAH.ManaPoints": "Mana Points",
+
+  "HTBAH.Inventory": "Inventory",  
+
+  "HTBAH.InventorySearch": "Search...",
+  "HTBAH.FilterClear": "Clear Filter",
+  "HTBAH.FilterGroupCategory": "Group by",
+  "HTBAH.SortManually": "Sort manually",
+  "HTBAH.SortAuto": "A-Z",
+
+  "HTBAH.Equipped": "Equipped",
+  "HTBAH.Unequipped": "Unequipped",
+  "HTBAH.Equip": "Equip",
+  "HTBAH.Unequip": "Unequip",
+  
+  "HTBAH.Quantity": "Quantity",
+  "HTBAH.Uses": "Uses",
+
+  "HTBAH.ContextMenuActionEdit": "Edit",
+  "HTBAH.ContextMenuActionDuplicate": "Duplicate",
+  "HTBAH.ContextMenuActionEquip": "Equip",
+  "HTBAH.ContextMenuActionDelete": "Delete",
+  "HTBAH.ContextMenuActionGiveItem": "Give item",
+  "HTBAH.GiveItemDialogTitle": "Give item",
+  "HTBAH.GiveItemSearchPlaceholder": "Search...",
+  "HTBAH.GiveItemSelectButton": "Select",
+  "HTBAH.GiveItemNoActorsFound": "No actors found",
+  "HTBAH.GiveItemOwner": "Owner: You",
+  "HTBAH.GiveItemNPC": "NPC",
+  "HTBAH.GiveItemActorNotFound": "Selected actor not found.",
+  "HTBAH.GiveItemSuccess": "Gave \"{item}\" to {actor}",
+  "HTBAH.GiveItemError": "Failed to give item: {error}",
+
+  "HTBAH.ItemEdit": "Edit",
+  "HTBAH.ItemView": "View",
+  "HTBAH.ItemDelete": "Delete",
+
+  "HTBAH.Description": "Description",
+
+  "HTBAH.Item": "Item",
+  "HTBAH.ItemPl": "Items",
+  "HTBAH.consumable": "Consumable",
+  "HTBAH.consumablePl": "Consumables",
+  "HTBAH.tool": "Tool",
+  "HTBAH.toolPl": "Tools",
+  "HTBAH.weapon": "Weapon",
+  "HTBAH.weaponPl": "Weapons",
+  "HTBAH.armor": "Armor",
+  "HTBAH.armorPl": "Armors",
+  "HTBAH.knowledge": "Knowledge",
+  "HTBAH.action": "Action",
+  "HTBAH.social": "Social",
+
+  "HTBAH.SkillSet": "Skill Set",
+  "HTBAH.SkillSets": "Skill Sets",
+  
+  "HTBAH.SkillSetCheckPromptTitle": "General roll",
+  
+  "HTBAH.SkillSetKnowledge": "Knowledge",
+  "HTBAH.SkillSetKnowledgeLong": "knowledge",
+  "HTBAH.SkillSetKnowledgeAbbr": "kno",
+  "HTBAH.SkillSetKnowledgeEureka": "Knowledge Eureka",
+  "HTBAH.SkillSetAction": "Action",
+  "HTBAH.SkillSetActionLong": "action",
+  "HTBAH.SkillSetActionAbbr": "act",
+  "HTBAH.SkillSetActionEureka": "Action Eureka",
+  "HTBAH.SkillSetSocial": "Social",
+  "HTBAH.SkillSetSocialLong": "social",
+  "HTBAH.SkillSetSocialAbbr": "soc",
+  "HTBAH.SkillSetSocialEureka": "Social Eureka",
+  
+  "HTBAH.SkillSetSpentPoints": "Spent",
+  "HTBAH.SkillSetCalculatedPoint": "Calculated",
+  
+  "HTBAH.SavePromptTitle": "{skillSet} Throw",
+
+  "HTBAH.Favorite": "Favorite",
+  "HTBAH.FavoriteDrop": "Drop Favorite",
+  "HTBAH.FavoriteRemove": "Remove Favorite",
+  "HTBAH.Favorites": "Favorites",
+
+  "HTBAH.Details": "Details",  
+
+  "HTBAH.Conditions": "Conditions",
+  
+  "HTBAH.Effect": "Effect",
+  "HTBAH.Effects": "Effects",
+  "HTBAH.EffectsApplyTokens": "Apply to selected tokens",
+  "HTBAH.EffectApplyWarningOwnership": "Effects cannot be applied to tokens you are not the owner of.",
+  "HTBAH.EffectsSearch": "Search effects",
+  
+  "HTBAH.EffectCreate": "Create Effect",
+  "HTBAH.EffectToggle": "Toggle Effect",
+  "HTBAH.EffectEdit": "Edit Effect",
+  "HTBAH.EffectEnable": "Enable Effect",
+  "HTBAH.EffectDelete": "Delete Effect",
+  "HTBAH.EffectDisable": "Disable Effect",
+  "HTBAH.EffectTemporary": "Temporary Effects",
+  "HTBAH.EffectPassive": "Passive Effects",
+  "HTBAH.EffectInactive": "Inactive Effects",
+  "HTBAH.EffectNew": "New Effect",
+  "HTBAH.EffectUnavailable": "Unavailable Effects",
+  "HTBAH.EffectUnavailableInfo": "Source item must be equipped or attuned to activate these",
+  
+  "HTBAH.Suppressed": "Suppressed",
+  "HTBAH.ExperiencePoints": "Experience Points",
+
+  "HTBAH.Newaction": "New Action",
+  "HTBAH.Newknowledge": "New Knowledge", 
+  "HTBAH.Newsocial": "New Social",
+
+  "EFFECT.HTBAH": {
+    "StatusBleeding": "Bleeding",
+    "StatusBurrowing": "Burrowing",
+    "StatusConcentrating": "Concentrating",
+    "StatusCursed": "Cursed",
+    "StatusDead": "Dead",
+    "StatusDodging": "Dodging",
+    "StatusEncumbered": "Encumbered",
+    "StatusEthereal": "Ethereal",
+    "StatusExceedingCarryingCapacity": "Exceeding Carrying Capacity",
+    "StatusFlying": "Flying",
+    "StatusHeavilyEncumbered": "Heavily Encumbered",
+    "StatusHiding": "Hiding",
+    "StatusHovering": "Hovering",
+    "StatusMarked": "Marked",
+    "StatusSilenced": "Silenced",
+    "StatusSleeping": "Sleeping",
+    "StatusStable": "Stable",
+    "StatusSurprised": "Surprised",
+    "StatusTransformed": "Transformed",
+    "StatusAsleep": "Asleep",
+    "StatusStunned": "Stunned",
+    "StatusProne": "Prone",
+    "StatusRestrained": "Restrained",
+    "StatusParalyzed": "Paralyzed",
+    "StatusDeaf": "Deaf",
+    "StatusBlind": "Blind",
+    "StatusFrightened": "Frightened",
+    "StatusCorroding": "Corroding",
+    "StatusShocked": "Shocked",
+    "StatusFrozen": "Frozen",
+    "StatusBurning": "Burning",
+    "StatusDiseased": "Diseased",
+    "StatusPoisoned": "Poisoned",
+    "StatusWeakened": "Weakened",
+    "StatusEmpowered": "Empowered",
+    "StatusDegenerating": "Degenerating",
+    "StatusRegenerating": "Regenerating",
+    "StatusInvisible": "Invisible",
+    "StatusTargeted": "Targeted",
+    "StatusBlessed": "Blessed",
+    "StatusHolyShield": "Holy Shield",
+    "StatusMagicShield": "Magic Shield",
+    "StatusIceShield": "Ice Shield",
+    "StatusFireShield": "Fire Shield"
+  },
+  
+  "HTBAH.ConBlinded": "Blinded",
+  "HTBAH.ConCharmed": "Charmed",
+  "HTBAH.ConDeafened": "Deafened",
+  "HTBAH.ConDiseased": "Diseased",
+  "HTBAH.ConExhaustion": "Exhaustion",
+  "HTBAH.ConFrightened": "Frightened",
+  "HTBAH.ConGrappled": "Grappled",
+  "HTBAH.ConImm": "Condition Immunities",
+  "HTBAH.ConUnconscious": "Unconscious",
+  "HTBAH.ConIncapacitated": "Incapacitated",
+  "HTBAH.ConInvisible": "Invisible",
+  "HTBAH.ConParalyzed": "Paralyzed",
+  "HTBAH.ConPetrified": "Petrified",
+  "HTBAH.ConPoisoned": "Poisoned",
+  "HTBAH.ConProne": "Prone",
+  "HTBAH.ConRestrained": "Restrained",
+  "HTBAH.ConStunned": "Stunned",
+
+  "HTBAH.Biography": "Biography",
+  
+  "HTBAH.ParryAttempt": "Parry Attempt",
+  "HTBAH.ParrySuccessful": "Parry Successful",
+  "HTBAH.ParryFailed": "Parry Failed", 
+  "HTBAH.ParryExceptional": "Exceptional Parry",
+  "HTBAH.ParryDisastrous": "Disastrous Parry",
+  "HTBAH.Target": "Target",
+  "HTBAH.Bonus": "Bonus",
+  "HTBAH.Rolled": "Rolled",
+
+  "HTBAH.WarnNameRequired": "Name is required",
+  "HTBAH.WarningOnlyAbilitiesInSkillSets": "Only abilities can be moved between skill sets",
+
+  "HTBAH.RollDialog": {
+    "Title": "Roll",
+    "BaseRoll": "Base Roll",
+    "Bonus": "Bonus",
+    "BonusHint": "Additional bonus to add to this roll",
+    "Malus": "Malus",
+    "MalusHint": "Penalty to subtract from this roll",
+    "FinalRoll": "Final Roll",
+    "Roll": "Roll",
+    "RollItem": "Roll {item}",
+    "ErrorRolling": "Failed to execute roll"
+  },
+  
+  "HTBAH.Unknown": "Unknown",
+  
+  "HTBAH.Settings": {
+    "ShowManaBar": {
+      "Name": "Show Mana Bar",
+      "Hint": "Whether to display the mana bar on character sheets. When disabled, the mana bar will be hidden for all characters."
+    }
+  },
+    
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "ability": "Ability",
+      "tool": "Tool",
+      "weapon": "Weapon",
+      "consumable": "Consumable",
+      "item": "Item",
+      "armor": "Armor",
+      "base": "Base"
+    }
+  },
+
+  "HTBAH.Settings.Debug.Name": "Debug Mode",
+  "HTBAH.Settings.Debug.Hint": "Enable debug logging for the How to be a Hero system.",
+  
+  "HTBAH.Settings.CollapseCards.Name": "Auto-collapse Item Cards",
+  "HTBAH.Settings.CollapseCards.Hint": "Automatically collapse item cards in chat messages.",
+  
+  "HTBAH.Settings.Initiative.Name": "Initiative Formula",
+  "HTBAH.Settings.Initiative.Hint": "Configure the default dice formula used for initiative rolls.",
+  
+  "HTBAH.Settings.ForceDarkMode.Name": "Force Dark Mode",
+  "HTBAH.Settings.ForceDarkMode.Hint": "Forces dark mode for all users when using How to be a Hero sheets. Light mode is not yet fully supported.",
+
+  "HTBAH.Settings.ShowEureka.Name": "Show Eureka Points",
+  "HTBAH.Settings.ShowEureka.Hint": "Whether to display Eureka point fields on character sheets. When disabled, Eureka mechanics will be hidden for all characters.",
+
+  "HTBAH.EurekaCurrentTooltip": "Current Eureka points - special points that can be spent for rerolls and bonuses",
+  "HTBAH.EurekaMaxTooltip": "Maximum Eureka points that can be accumulated",
+
+  "HTBAH.CompactModeOn": "Compact Mode: On - Click to expand sheet",
+  "HTBAH.CompactModeOff": "Compact Mode: Off - Click to show header only"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "how-to-be-a-hero",
+  "version": "1.1.0",
+  "description": "CSS compiler for the HowToBeAHero system",
+  "scripts": {
+    "build:css": "node -e \"const { existsSync } = require('fs'); const { spawnSync } = require('child_process'); const path='src/scss/how-to-be-a-hero.scss'; if (!existsSync(path)) { console.log('Skipping CSS build: '+path+' not found'); process.exit(0); } const res = spawnSync('sass',[path,'css/how-to-be-a-hero.css','--style=expanded','--no-source-map'],{stdio:'inherit'}); process.exit(res.status ?? 0);\"",
+    "pack": "node scripts/pack.js",
+    "unpack": "node scripts/unpack.js",
+    "build:packs": "npm run pack",
+    "build": "npm run build:css && npm run pack",
+    "build:release": "node scripts/build-release.js",
+    "watch": "sass src/scss/how-to-be-a-hero.scss css/how-to-be-a-hero.css --style=expanded --source-map --watch"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "Asacolips",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^2.0.0",
+    "sass": "^1.53.0"
+  }
+}

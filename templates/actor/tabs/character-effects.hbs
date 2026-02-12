@@ -1,0 +1,111 @@
+{{!-- templates/actor/tabs/character-effects.hbs --}}
+<htbah-effects>
+    <item-list-controls for="effects" label="{{ localize "HTBAH.EffectsSearch" }}" sort="a"
+                        collection="effects" hidden></item-list-controls>
+
+    <section class="items-list effects-list" data-item-list="effects">
+        {{#each effects}}
+        {{#if effects.length}}
+        <div class="items-section card" data-effect-type="{{ type }}">
+            <div class="items-header header {{#if disabled}}disabled{{/if}}">
+                <h3 class="item-name effect-name">{{ localize label }}</h3>
+                <div class="item-header effect-source">{{ localize "HTBAH.Source" }}</div>
+                <div class="item-header item-controls effect-controls">
+                    {{#if info}}
+                    <a class="info-control" aria-label="{{ info }}">
+                        <i class="fas fa-circle-question"></i>
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+
+            <ol class="item-list unlist">
+                {{#each effects}}
+                <li class="item effect" data-effect-id="{{ id }}" data-entry-id="{{ id }}" data-item-name="{{ name }}"
+                    {{#if parentId}}data-parent-id="{{ parentId }}"{{/if}}>
+
+                    <div class="item-name effect-name">
+                        <img class="item-image gold-icon" src="{{ img }}" alt="{{ name }}">
+                        <div class="name name-stacked">
+                            <span class="title">{{ name }}</span>
+                        </div>
+                        {{#if duration.remaining}}
+                        <div class="duration">
+                            <i class="fas fa-clock"></i>
+                            <span class="most-significant">{{ durationParts.[0] }}</span>
+                            {{#if durationParts.[1]}}
+                            <span class="separator">&vert;</span>
+                            <span class="least-significant">{{ durationParts.[1] }}</span>
+                            {{/if}}
+                        </div>
+                        {{/if}}
+                    </div>
+
+                    <div class="item-detail effect-source {{#unless source}}empty{{/unless}}">
+                        {{#if source}}
+                        {{ source.name }}
+                        {{/if}}
+                    </div>
+
+                    <div class="item-detail item-controls effect-controls">
+                        {{#if @root.editable}}
+                        <a class="effect-control item-control" data-action="effectAction" data-sub-action="edit"
+                           aria-label="{{ localize "HTBAH.EffectEdit" }}">
+                            <i class="fas fa-pen-to-square"></i>
+                        </a>
+                        <a class="effect-control item-control" data-action="effectAction" data-sub-action="delete"
+                           aria-label="{{ localize "HTBAH.EffectDelete" }}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        {{else if toggleable}}
+                        <a class="effect-control item-control {{#unless disabled}}active{{/unless}}"
+                           data-action="effectAction" data-sub-action="toggle"
+                           aria-label="{{#if disabled}}{{ localize "HTBAH.EffectEnable" }}{{else}}{{ localize "HTBAH.EffectDisable" }}{{/if}}">
+                            {{#if disabled}}
+                            <i class="fas fa-toggle-off"></i>
+                            {{else}}
+                            <i class="fas fa-toggle-on"></i>
+                            {{/if}}
+                        </a>
+                        {{/if}}
+
+                        <a class="effect-control item-control interface-only" data-context-menu
+                           aria-label="{{ localize "HTBAH.AdditionalControls" }}">
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+        {{/if}}
+        {{/each}}
+    </section>
+
+    <section class="items-list">
+        <div class="items-section card">
+            <div class="items-header header">
+                <h3 class="item-name">{{ localize "HTBAH.Conditions" }}</h3>
+            </div>
+
+            <ul class="conditions-list unlist">
+                {{#each conditions}}
+                <li class="condition {{#unless disabled}}active{{/unless}} {{#if reference}}content-link{{/if}}"
+                    data-action="toggleCondition" data-uuid="{{ reference }}" data-condition-id="{{ id }}">
+                    <div class="icon">
+                        <htbah-icon src="{{ icon }}"></htbah-icon>
+                    </div>
+                    <div class="name-stacked">
+                        <span class="title">{{localize name }}</span>
+                    </div>
+                    {{#if disabled}}
+                    <i class="fas fa-toggle-off"></i>
+                    {{else}}
+                    <i class="fas fa-toggle-on"></i>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+</htbah-effects>

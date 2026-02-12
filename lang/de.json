@@ -1,0 +1,331 @@
+{
+  "HOW_TO_BE_A_HERO": {
+    "Attributes": {
+      "Armor": "Rüstung",
+      "HitPointsCurrent": "Aktuelle Lebenspunkte",
+      "HitPointsMaximum": "Maximale Lebenspunkte",
+      "HitPointsTemp": "Temporäre Lebenspunkte",
+      "HitPointsTempMax": "Temporäre maximale Lebenspunkte",
+      "Eureka": "Geistesblitz"
+    },
+    "Details": {
+      "Background": "Hintergrund",
+      "Alignment": "Ausrichtung", 
+      "Appearance": "Erscheinungsbild",
+      "Wealth": "Reichtum",
+      "Age": "Alter"
+    },
+    "SkillSets": {
+      "Knowledge": { 
+        "label": "Wissen", 
+        "long": "wissen", 
+        "abbr": "wis", 
+        "bonus": "Wissen-Bonus", 
+        "eureka": "Wissen-Geistesblitz", 
+        "total": "Knowledge-Gesamt"  
+      },
+      "Action": { 
+        "label": "Handeln", 
+        "long": "handeln", 
+        "abbr": "han", 
+        "bonus": "Handeln-Bonus", 
+        "eureka": "Handeln-Geistesblitz", 
+        "total": "Handeln-Gesamt"  
+      },
+      "Social": { 
+        "label": "Soziales", 
+        "long": "soziales", 
+        "abbr": "soz", 
+        "bonus": "Sozial-Bonus", 
+        "eureka": "Sozial-Geistesblitz", 
+        "total": "Sozial-Gesamt"  }
+    },
+    "Item": {
+      "Quantity": "Anzahl",
+      "Description": "Beschreibung",
+      "Formula": "Formel"
+    },
+    "SheetLabels": {
+      "Actor": "HowToBeAHero Charakterbogen",
+      "Item": "HowToBeAHero Gegenstandsbogen"
+    },
+    "Effect": {
+      "Source": "Quelle",
+      "Toggle": "Umschaltbarer Effekt",
+      "Temporary": "Temporäre Effekte",
+      "Passive": "Passive Effekte",
+      "Inactive": "Inaktive Effekte"
+    }
+  },
+  
+  "HTBAH.SkillSetCheck": "Wurf auf Begabung",
+  "HTBAH.KnowledgeCheck": "Wurf auf Wissen",
+  "HTBAH.ActionCheck": "Wurf auf Handeln",
+  "HTBAH.SocialCheck": "Wurf auf Soziales",
+  "HTBAH.Check": "Prüfen",
+
+  "HTBAH.Appearance": "Beschreibung des Äußeren",
+  "HTBAH.Age": "Alter",
+  "HTBAH.Alignment": "Gesinnung",
+  "HTBAH.Wealth": "Reichtum",
+
+  "HTBAH.SheetModeEdit": "Bearbeiten",
+  "HTBAH.SheetModePlay": "Spielen",
+
+  "HTBAH.DamageRollPrompt": "W",
+
+  "HTBAH.RollType": "Würfeln auf",
+  "HTBAH.RollTypeCheck": "Prüfen",
+  "HTBAH.RollTypeDamage": "Schaden",
+
+  "HTBAH.SkillDrop": "Fähigkeit ablegen",
+  "HTBAH.WeaponDrop": "Waffe ablegen",
+  "HTBAH.ItemDrop": "Ablegen um zu Gegenstand zu konvertieren",
+  "HTBAH.ConsumableDrop": "Ablegen um zu Verbrauchsgegenstand zu konvertieren",
+  "HTBAH.WeaponDropConvert": "Ablegen um zu Waffe zu konvertieren",
+  "HTBAH.ArmorDrop": "Ablegen um zu Rüstung zu konvertieren",
+  "HTBAH.ToolDrop": "Ablegen um zu Werkzeug zu konvertieren",
+  "HTBAH.Skill": "Fähigkeit",
+  "HTBAH.Weapon": "Waffe",
+  "HTBAH.Parry": "Parade",
+  "HTBAH.Initiative": "Initiative",
+
+  "HTBAH.HitPoints": "Lebenspunkte",
+  "HTBAH.ManaPoints": "Manapunkte",
+
+  "HTBAH.Inventory": "Inventar",  
+
+  "HTBAH.InventorySearch": "Suche...",
+  "HTBAH.FilterClear": "Filter entfernen",
+  "HTBAH.FilterGroupCategory": "Gruppieren",
+  "HTBAH.SortManually": "Manuelle Sortierung",
+  "HTBAH.SortAuto": "A-Z",
+
+  "HTBAH.Equipped": "Ausgerüstet",
+  "HTBAH.Unequipped": "Verstaut",
+
+  "HTBAH.Quantity": "Anzahl",
+  "HTBAH.Uses": "Verwendungen",
+
+  "HTBAH.ContextMenuActionEdit": "Bearbeiten",
+  "HTBAH.ContextMenuActionDuplicate": "Dublizieren",
+  "HTBAH.ContextMenuActionDelete": "Löschen",
+  "HTBAH.ContextMenuActionGiveItem": "Gegenstand geben",
+  "HTBAH.GiveItemDialogTitle": "Gegenstand übergeben",
+  "HTBAH.GiveItemSearchPlaceholder": "Suche…",
+  "HTBAH.GiveItemSelectButton": "Wähle",
+  "HTBAH.GiveItemNoActorsFound": "Keine Charaktere gefunden",
+  "HTBAH.GiveItemOwner": "Eigentümer: Du",
+  "HTBAH.GiveItemNPC": "NPC",
+  "HTBAH.GiveItemActorNotFound": "Ausgewählter Charakter nicht gefunden.",
+  "HTBAH.GiveItemSuccess": "\"{item}\" an {actor} gegeben",
+  "HTBAH.GiveItemError": "Fehler beim Übergeben des Gegenstands: {error}",
+
+  "HTBAH.ItemEdit": "Bearbeiten",
+  "HTBAH.ItemView": "Anzeigen",
+  "HTBAH.ItemDelete": "Löschen",
+
+  "HTBAH.Description": "Beschreibung",
+  
+  "HTBAH.Item": "Gegenstand",
+  "HTBAH.ItemPl": "Gegenstände",
+  "HTBAH.consumable": "Verbrauchsgegenstand",
+  "HTBAH.consumablePl": "Verbrauchsgegenstände",
+  "HTBAH.tool": "Werkzeug",
+  "HTBAH.toolPl": "Werkzeuge",
+  "HTBAH.weapon": "Waffe",
+  "HTBAH.weaponPl": "Waffen",
+  "HTBAH.armor": "Rüstung",
+  "HTBAH.armorPl": "Rüstungen",
+  "HTBAH.knowledge": "Wissen",
+  "HTBAH.action": "Handeln",
+  "HTBAH.social": "Soziales",
+
+  "HTBAH.SkillSet": "Begabung",
+  "HTBAH.SkillSets": "Begabungen",
+
+  "HTBAH.SkillSetCheckPromptTitle": "Allgemeiner Wurf",
+  
+  "HTBAH.SkillSetKnowledge": "Wissen",
+  "HTBAH.SkillSetKnowledgeLong": "wissen",
+  "HTBAH.SkillSetKnowledgeAbbr": "wis",
+  "HTBAH.SkillSetKnowledgeEureka": "Wissens-Geistesblitz",
+  "HTBAH.SkillSetAction": "Handeln",
+  "HTBAH.SkillSetActionLong": "handeln",
+  "HTBAH.SkillSetActionAbbr": "han",
+  "HTBAH.SkillSetActionEureka": "Handlungs-Geistesblitz",
+  "HTBAH.SkillSetSocial": "Soziales",
+  "HTBAH.SkillSetSocialLong": "soziales",
+  "HTBAH.SkillSetSocialAbbr": "soz",
+  "HTBAH.SkillSetSocialEureka": "Sozial-Geistesblitz",
+  
+  "HTBAH.SkillSetSpentPoints": "Verbraucht",
+  "HTBAH.SkillSetCalculatedPoint": "Berechnet",
+  
+  "HTBAH.SavePromptTitle": "{skillSet} Wurf",
+  
+  "HTBAH.Favorite": "Favorit",
+  "HTBAH.FavoriteDrop": "Favorit ablegen",
+  "HTBAH.FavoriteRemove": "Favorit entfernen",
+  "HTBAH.Favorites": "Favoriten",
+
+  "HTBAH.Details": "Details",  
+
+  "HTBAH.Conditions": "Zustände",
+
+  "HTBAH.Effect": "Effekt",
+  "HTBAH.Effects": "Effekte",
+  "HTBAH.EffectsApplyTokens": "Auf ausgewählte Token anwenden",
+  "HTBAH.EffectApplyWarningOwnership": "Effekte können nicht auf Token angewendet werden, deren Besitzer Sie nicht sind.",
+  "HTBAH.EffectsSearch": "Effekte durchsuchen",
+
+  "HTBAH.EffectCreate": "Effekt erstellen",
+  "HTBAH.EffectToggle": "Effekt umschalten",
+  "HTBAH.EffectEdit": "Effekt bearbeiten",
+  "HTBAH.EffectEnable": "Effekt aktivieren",
+  "HTBAH.EffectDelete": "Effekt löschen",
+  "HTBAH.EffectDisable": "Effekt deaktivieren",
+  "HTBAH.EffectTemporary": "Temporäre Effekte",
+  "HTBAH.EffectPassive": "Passive Effekte",
+  "HTBAH.EffectInactive": "Inaktive Effekte",
+  "HTBAH.EffectNew": "Neuer Effekt",
+  "HTBAH.EffectUnavailable": "Nicht verfügbare Effekte",
+  "HTBAH.EffectUnavailableInfo": "Quellgegenstand muss ausgerüstet oder eingestimmt sein, um diese zu aktivieren",
+  
+  "HTBAH.Suppressed": "Unterdrückt",
+  "HTBAH.ExperiencePoints": "Erfahrungspunkte",
+
+  "EFFECT.HTBAH": {
+    "StatusBleeding": "Blutend",
+    "StatusBurrowing": "Grabend",
+    "StatusConcentrating": "Konzentrierend",
+    "StatusCursed": "Verflucht",
+    "StatusDead": "Tot",
+    "StatusDodging": "Ausweichend",
+    "StatusEncumbered": "Belastet",
+    "StatusEthereal": "Ätherisch",
+    "StatusExceedingCarryingCapacity": "Tragekapazität überschritten",
+    "StatusFlying": "Fliegend",
+    "StatusHeavilyEncumbered": "Schwer belastet",
+    "StatusHiding": "Versteckt",
+    "StatusHovering": "Schwebend",
+    "StatusMarked": "Markiert",
+    "StatusSilenced": "Zum Schweigen gebracht",
+    "StatusSleeping": "Schlafend",
+    "StatusStable": "Stabil",
+    "StatusSurprised": "Überrascht",
+    "StatusTransformed": "Verwandelt",
+    "StatusAsleep": "Eingeschlafen",
+    "StatusStunned": "Betäubt",
+    "StatusProne": "Liegend",
+    "StatusRestrained": "Gefesselt",
+    "StatusParalyzed": "Gelähmt",
+    "StatusDeaf": "Taub",
+    "StatusBlind": "Blind",
+    "StatusFrightened": "Verängstigt",
+    "StatusCorroding": "Korrodierend",
+    "StatusShocked": "Geschockt",
+    "StatusFrozen": "Gefroren",
+    "StatusBurning": "Brennend",
+    "StatusDiseased": "Erkrankt",
+    "StatusPoisoned": "Vergiftet",
+    "StatusWeakened": "Geschwächt",
+    "StatusEmpowered": "Verstärkt",
+    "StatusDegenerating": "Degenerierend",
+    "StatusRegenerating": "Regenerierend",
+    "StatusInvisible": "Unsichtbar",
+    "StatusTargeted": "Anvisiert",
+    "StatusBlessed": "Gesegnet",
+    "StatusHolyShield": "Heiliger Schild",
+    "StatusMagicShield": "Magischer Schild",
+    "StatusIceShield": "Eisschild",
+    "StatusFireShield": "Feuerschild"
+  },
+
+  "HTBAH.ConBlinded": "Geblendet",
+  "HTBAH.ConCharmed": "Bezaubert",
+  "HTBAH.ConDeafened": "Taub",
+  "HTBAH.ConDiseased": "Erkrankt",
+  "HTBAH.ConExhaustion": "Erschöpfung",
+  "HTBAH.ConFrightened": "Verängstigt",
+  "HTBAH.ConGrappled": "Gepackt",
+  "HTBAH.ConImm": "Zustandsimmunitäten",
+  "HTBAH.ConUnconscious": "Bewusstlos",
+  "HTBAH.ConIncapacitated": "Kampfunfähig",
+  "HTBAH.ConInvisible": "Unsichtbar",
+  "HTBAH.ConParalyzed": "Gelähmt",
+  "HTBAH.ConPetrified": "Versteinert",
+  "HTBAH.ConPoisoned": "Vergiftet",
+  "HTBAH.ConProne": "Liegend",
+  "HTBAH.ConRestrained": "Gefesselt",
+  "HTBAH.ConStunned": "Betäubt",
+
+  "HTBAH.Biography": "Biographie",
+
+  "HTBAH.ParryAttempt": "Parierversuch",
+  "HTBAH.ParrySuccessful": "Erfolgreich pariert",
+  "HTBAH.ParryFailed": "Parieren fehlgeschlagen",
+  "HTBAH.ParryExceptional": "Außergewöhnliches Parieren",
+  "HTBAH.ParryDisastrous": "Katastrophales Parieren",
+  "HTBAH.Target": "Zielwert",
+  "HTBAH.Bonus": "Bonus",
+  "HTBAH.Rolled": "Gewürfelt",
+
+  "HTBAH.WarnNameRequired": "Name ist erforderlich",
+  "HTBAH.WarningOnlyAbilitiesInSkillSets": "Nur Fähigkeiten können zwischen Fertigkeitsgruppen verschoben werden",
+
+  "HTBAH.RollDialog": {
+    "Title": "Würfeln",
+    "BaseRoll": "Grundwurf",
+    "Bonus": "Bonus",
+    "BonusHint": "Zusätzlicher Bonus für diesen Wurf",
+    "Malus": "Malus",
+    "MalusHint": "Abzug von diesem Wurf",
+    "FinalRoll": "Finaler Wurf",
+    "Roll": "Würfeln",
+    "RollItem": "{item} würfeln",
+    "ErrorRolling": "Fehler beim Würfeln"
+  },
+  
+  "HTBAH.Unknown": "Unbekannt",
+
+  "HTBAH.Settings.ShowManaBar.Name": "Mana-Balken anzeigen",
+  "HTBAH.Settings.ShowManaBar.Hint": "Ob der Mana-Balken auf Charakterbögen angezeigt wird. Wenn deaktiviert, wird der Mana-Balken für alle Charaktere ausgeblendet.",
+  
+  "HTBAH.Settings.Debug.Name": "Debug-Modus",
+  "HTBAH.Settings.Debug.Hint": "Aktiviert Debug-Protokollierung für das How to be a Hero System.",
+  
+  "HTBAH.Settings.CollapseCards.Name": "Gegenstandskarten automatisch einklappen",
+  "HTBAH.Settings.CollapseCards.Hint": "Klappt Gegenstandskarten in Chat-Nachrichten automatisch ein.",
+  
+  "HTBAH.Settings.Initiative.Name": "Initiative-Formel",
+  "HTBAH.Settings.Initiative.Hint": "Konfiguriert die Standard-Würfelformel für Initiative-Würfe.",
+  
+  "HTBAH.Settings.ForceDarkMode.Name": "Dunklen Modus erzwingen",
+  "HTBAH.Settings.ForceDarkMode.Hint": "Erzwingt den dunklen Modus für alle Benutzer bei der Verwendung von How to be a Hero Bögen. Der helle Modus wird noch nicht vollständig unterstützt.",
+
+  "TYPES": {
+    "Actor": {
+      "character": "Charakter",
+      "npc": "NSC"
+    },
+    "Item": {
+      "ability": "Fähigkeit",
+      "tool": "Werkzeug",
+      "weapon": "Waffe",
+      "consumable": "Verbrauchsgegenstand",
+      "item": "Gegenstand",
+      "armor": "Rüstung",
+      "base": "Basis"
+    }
+  },
+
+  "HTBAH.Settings.ShowEureka.Name": "Geistesblitz-Punkte anzeigen",
+  "HTBAH.Settings.ShowEureka.Hint": "Bestimmt ob Geistesblitz-Punkt-Felder auf Charakterbögen angezeigt werden. Wenn deaktiviert, werden Geistesblitz-Mechaniken für alle Charaktere ausgeblendet.",
+
+  "HTBAH.EurekaCurrentTooltip": "Aktuelle Geistesblitz-Punkte - spezielle Punkte für Würfelwiederholungen und Boni",
+  "HTBAH.EurekaMaxTooltip": "Maximale Geistesblitz-Punkte die angesammelt werden können",
+
+  "HTBAH.CompactModeOn": "Kompakt-Modus: An - Klicken zum Erweitern",
+  "HTBAH.CompactModeOff": "Kompakt-Modus: Aus - Klicken um nur Kopfzeile zu zeigen"
+}

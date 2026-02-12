@@ -1,0 +1,45 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{!-- Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{document.img}}" data-action="showPortrait" title="{{document.name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{document.name}}" placeholder="Name" /></h1>
+    </div>
+    <div class="item-subtitle">
+      <h4 class="item-type">{{itemType}}</h4>
+    </div>
+  </header>
+
+  {{!-- Navigation --}}
+  <nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item active" data-tab="description">{{ localize "HTBAH.Description" }}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="sidebar">
+      {{!-- Dynamic sidebar content based on item type --}}
+      {{#if document.type}}
+        {{> (concat "htbah." document.type "-sidebar")}}
+      {{else}}
+        {{> "htbah.item-sidebar"}}
+      {{/if}}
+    </div>
+
+    <div class="main-content">
+      <div class="tab description" data-group="primary" data-tab="description">
+        <div class="description-field">
+          <label for="description">Description:</label>
+          <textarea name="system.description" id="description" rows="6" placeholder="Enter item description...">{{system.description}}</textarea>
+        </div>
+      </div>
+      
+      {{!-- Dynamic main content based on item type --}}
+      {{#if document.type}}
+        {{> (concat "htbah." document.type "-content")}}
+      {{else}}
+        {{> "htbah.item-content"}}
+      {{/if}}
+    </div>
+  </section>
+</form>

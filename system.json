@@ -1,0 +1,80 @@
+{
+  "id": "how-to-be-a-hero",
+  "title": "How to be a Hero",
+  "description": "The How to be a Hero system for FoundryVTT!",
+  "version": "1.1.0",
+  "authors": [
+    {
+      "name": "GrafSchwarz",
+      "discord": "GrafSchwarz"
+    },
+    {
+      "name": "McGreger",
+      "discord": "McGreger"
+    }
+  ],
+  "url": "https://github.com/GrafSchwarz/howtobeahero",
+  "license": "LICENSE.txt",
+  "readme": "README.md",
+  "bugs": "https://github.com/GrafSchwarz/howtobeahero/issues",
+  "changelog": "CHANGELOG.md",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/how-to-be-a-hero/assets/htbah.webp",
+      "thumbnail": "systems/how-to-be-a-hero/assets/htbah.webp"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.348",
+    "maximum": "13.999"
+  },
+  "esmodules": [
+    "module/how-to-be-a-hero.mjs",
+    "module/components/_module.mjs"
+  ],
+  "styles": [
+    "css/how-to-be-a-hero.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "rules",
+      "label": "Rules",
+      "path": "packs/rules",
+      "type": "JournalEntry",
+      "system": "how-to-be-a-hero"
+    }
+  ],
+  "socket": true,
+  "manifest": "https://github.com/GrafSchwarz/howtobeahero/releases/latest/download/system.json",
+  "download": "https://github.com/GrafSchwarz/howtobeahero/releases/latest/download/how-to-be-a-hero.zip",
+  "background": "systems/how-to-be-a-hero/assets/htbah.webp",
+  "primaryTokenAttribute": "health",
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "html", "json", "mjs"],
+      "paths": [
+        "lang",
+        "templates",
+        "module/components",
+        "module/documents",
+        "module/helpers",
+        "module/managers",
+        "module/sheets"
+      ]
+    }
+  }
+}

@@ -1,0 +1,251 @@
+{{!-- Components --}}
+{{#*inline "pip"}}
+<button type="button" class="{{ classes }}" data-n="{{ n }}" data-tooltip="{{ tooltip }}" aria-label="{{ label }}"
+  aria-pressed="{{ filled }}"></button>
+{{/inline}}
+{{!--
+{{#*inline "skillSet-score"}}
+    <div class="skillSet-score {{#if flipped}}flipped{{/if}}" data-ability="{{ key }}">
+        <a class="label {{ @root.rollableClass }} skillSet-check">{{ abbr }}</a>
+        <div class="mod">
+            <span class="sign">
+            {{ value }}
+            </span>
+        </div>
+    </div>
+{{/inline}}
+--}}
+<form class="interactable {{actor.type}} flexcol" autocomplete="off"> {{!-- {{actor.type}} --}}
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    {{!-- Left Column - Name --}}
+    <div class="header-left">
+      {{#if editable}}
+      <input type="text" name="name" class="document-name uninput" value="{{ actor.name }}">
+      {{else}}
+      <div class="document-name">{{ actor.name }}</div>
+      {{/if}}
+    </div>
+
+    {{!-- Center Column - Box --}}
+    <div class="header-center">
+      <div class="center-box">
+        {{!-- Initiative Column --}}
+        <div class="header-stat-column">
+          <div class="stat-header">{{ localize "HTBAH.Initiative" }}</div>
+          <div class="stat-content">
+            <i class="fas fa-dice-d20" {{#if (or actor.isOwner user.isGM)}}data-action="rollInitiative" role="button"{{/if}} aria-label="{{ localize 'HTBAH.RollInitiative' }}"></i>
+          </div>
+        </div>
+
+        <div class="header-stat-column" data-slot="ability">
+          <div class="stat-header">{{ localize "HTBAH.Skill" }}</div>
+          <div class="stat-content">
+            {{#if headerItems.ability}}
+              <div class="header-item {{#if (or actor.isOwner user.isGM)}}rollable{{/if}}" data-item-id="{{headerItems.ability._id}}" {{#if (or actor.isOwner user.isGM)}}data-action="rollSkill"{{/if}}>
+                <img src="{{headerItems.ability.img}}" alt="{{headerItems.ability.name}}" title="{{headerItems.ability.name}}">
+                {{#if editable}}
+                <a class="item-remove" data-action="removeSkill" data-tooltip="{{ localize "HTBAH.Remove" }}">
+                  <i class="fas fa-times"></i>
+                </a>
+                {{/if}}
+              </div>
+            {{else}}
+              <li class="drop roboto-upper">{{ localize "HTBAH.SkillDrop" }}</li>
+            {{/if}}
+          </div>
+        </div>
+
+        {{!-- Replace the existing weapon column content with: --}}
+        <div class="header-stat-column" data-slot="weapon">
+          <div class="stat-header">{{ localize "HTBAH.Weapon" }}</div>
+          <div class="stat-content">
+            {{#if headerItems.weapon}}
+              <div class="header-item {{#if (or actor.isOwner user.isGM)}}rollable{{/if}}" data-item-id="{{headerItems.weapon._id}}" {{#if (or actor.isOwner user.isGM)}}data-action="rollWeapon"{{/if}}>
+                <img src="{{headerItems.weapon.img}}" alt="{{headerItems.weapon.name}}" title="{{headerItems.weapon.name}}">
+                {{#if editable}}
+                <a class="item-remove" data-action="removeWeapon" data-tooltip="{{ localize "HTBAH.Remove" }}">
+                  <i class="fas fa-times"></i>
+                </a>
+                {{/if}}
+              </div>
+            {{else}}
+              <li class="drop roboto-upper">{{ localize "HTBAH.WeaponDrop" }}</li>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Right Column --}}
+    <div class="header-right">
+      <!-- Add content for the right column here -->
+    </div>
+  </header>
+
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Main Content --}}
+    <div class="main-content">
+      {{!-- Sidebar --}}
+      <div class="sidebar">
+
+        {{!-- Character Card --}}
+        <div class="card">
+          {{!-- Collapser 
+          <button type="button" class="collapser card-tab vertical unbutton interface-only" {{#if sidebarCollapsed}}
+            data-tooltip="JOURNAL.ViewExpand" aria-label="{{ localize " JOURNAL.ViewExpand" }}" {{else}}
+            data-tooltip="JOURNAL.ViewCollapse" aria-label="{{ localize " JOURNAL.ViewCollapse" }}" {{/if}}>
+            <i class="fas fa-caret-{{#if sidebarCollapsed}}right{{else}}left{{/if}}"></i>
+          </button>
+          --}}
+          {{!-- Portrait --}}
+          <div class="portrait {{#if portrait.token}}token{{/if}}">
+            {{!--
+            {{#if editable}}
+            <label class="slide-toggle roboto-upper">
+              <input type="checkbox" name="flags.htbah.showTokenPortrait" {{ checked portrait.token }}>
+              {{#if portrait.token}}
+              <i class="fas fa-toggle-on"></i>
+              {{ localize "DOCUMENT.Token" }}
+              {{else}}
+              <i class="fas fa-toggle-off"></i>
+              {{ localize "HTBAH.Portrait" }}
+              {{/if}}
+            </label>
+            {{/if}}
+            --}}
+            <img src="{{ portrait.src }}" alt="{{ actor.name }}" {{#if (and editable
+              portrait.path)}}data-edit="{{ portrait.path }}" {{/if}}>
+          </div>
+          <div class="stats">
+
+            {{!-- AC & Exhaustion --}}
+            <div class="top">
+                {{!-- AC --}}
+                <div class="ac" aria-label="{{ localize "HTBAH.ArmorClass" }}">
+                    {{!--
+                    {{#if editable}}
+                    <a class="config-button" data-action="armor" data-tooltip="HTBAH.ArmorConfig"
+                      aria-label="{{ localize "HTBAH.ArmorConfig" }}">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                    {{else}}
+                    --}}
+                    <div data-attribution="attributes.armor" data-attribution-caption="HTBAH.ArmorClass"
+                        data-tooltip-direction="DOWN">
+                        <input type="text" name="system.attributes.armor.value" data-dtype="Number" placeholder="0"
+                        value="{{ system.attributes.armor.value }}">
+                    </div>
+                </div>
+            </div>
+            {{!-- Hit Points --}}
+            <div class="meter-group">
+              <div class="label roboto-condensed-upper">
+                <span>{{ localize "HTBAH.HitPoints" }}</span>
+                {{!--
+                {{#if editable}}
+                <a class="config-button" data-action="hitPoints" data-tooltip="HTBAH.HitPointsConfig"
+                  aria-label="{{ localize " HTBAH.HitPointsConfig" }}">
+                  <i class="fas fa-cog"></i>
+                </a>
+                {{/if}}
+                --}}
+              </div>
+                {{#with system.attributes.health}}
+                <div class="meter sectioned hit-points">
+                  <div class="progress hit-points
+                              {{~#if (gt tempmax 0)}} temp-positive
+                              {{~else if (lt tempmax 0)}} temp-negative{{/if}}" role="meter" aria-valuemin="0"
+                    aria-valuenow="{{ value }}" aria-valuemax="{{ max }}" style="--bar-percentage: {{ ../healthPercentage }}%">
+                    <div class="label">
+                      <span class="value">{{ value }}</span>
+                      <span class="separator">&sol;</span>
+                      <span class="max">{{ max }}</span>
+                      {{#if tempmax}}
+                      <span class="bonus">{{numberFormat tempmax signDisplay="always"}}</span>
+                      {{/if}}
+                    </div>
+                    <input type="text" name="system.attributes.health.value" data-dtype="Number" placeholder="0"
+                      value="{{ value }}" hidden>
+                  </div>
+                  <div class="tmp">
+                    <input type="text" name="system.attributes.health.temp" data-dtype="Number" placeholder="{{ localize "HTBAH.TMP" }}"
+                      value="{{ temp }}" {{#unless (or @root.actor.isOwner @root.user.isGM)}}readonly{{/unless}}>
+                  </div>
+                </div>
+                {{/with}}
+            </div>
+
+            {{!-- Mana Points --}}
+            <div class="meter-group">
+              <div class="label roboto-condensed-upper">
+                <span>{{ localize "HTBAH.ManaPoints" }}</span>
+              </div>
+              {{#with system.attributes.mana}}
+                <div class="meter sectioned mana-points">
+                  <div class="progress mana-points"
+                       role="meter"
+                       aria-valuemin="0"
+                       aria-valuenow="{{ value }}"
+                       aria-valuemax="{{ max }}"
+                       style="--bar-percentage: {{ ../manaPercentage }}%">
+                    <div class="label">
+                      <span class="value">{{ value }}</span>
+                      <span class="separator">&sol;</span>
+                      <span class="max">{{ max }}</span>
+                    </div>
+                    <input type="text" name="system.attributes.mana.value" data-dtype="Number" placeholder="0"
+                      value="{{ value }}" hidden>
+                  </div>
+                  <div class="tmp">
+                    <input type="text" name="system.attributes.mana.temp" data-dtype="Number" placeholder="{{ localize "HTBAH.TMP" }}"
+                      value="{{ temp }}" {{#unless (or @root.actor.isOwner @root.user.isGM)}}readonly{{/unless}}>
+                  </div>
+                </div>
+              {{/with}}
+            </div>
+          </div>
+
+        </div>
+       
+      </div>
+      {{!-- Tabbed Content --}}
+      <section class="tab-body">
+
+      {{!-- Character Details --}}
+        {{!-- Details Tab --}}
+        <div class="tab details" data-group="primary" data-tab="details">
+          {{> "htbah.character-details" }}
+        </div>
+
+        {{!-- Inventory Tab --}}
+        <div class="tab inventory" data-group="primary" data-tab="inventory">
+          {{> "htbah.character-inventory" }}
+        </div>
+
+        {{!-- Effects Tab --}}
+        <div class="tab effects" data-group="primary" data-tab="effects">
+          {{> "htbah.character-effects" }}
+        </div>
+
+        {{!-- Biography Tab --}}
+        <div class="tab biography" data-group="primary" data-tab="biography">
+          {{~> "htbah.character-biography" ~}}
+        </div>
+
+      </section>
+    </div>
+    
+      {{!-- Child Creation --}}
+      <button type="button" class="create-child gold-button" aria-label="{{ " SIDEBAR.Create"
+        type=(localize "DOCUMENT.Item" ) }}">
+        <i class="fas fa-plus"></i>
+      </button>
+  </section>
+</form>
+
+{{log system}}
