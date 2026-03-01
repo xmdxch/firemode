@@ -52,6 +52,13 @@
           <label>Weapon Type:</label>
           <input type="text" name="system.weaponType" value="{{system.weaponType}}" placeholder="Melee, Ranged, etc." />
         </div>
+        <div class="form-group">
+          <label for="item-firemode">Firemode:</label>
+          <select id="item-firemode" name="system.firemode">
+            <option value="semi" {{#if (eq system.firemode "semi")}}selected{{/if}}>Semi</option>
+            <option value="auto" {{#if (eq system.firemode "auto")}}selected{{/if}}>Auto</option>
+          </select>
+        </div>
       </div>
     </div>
   </section>
